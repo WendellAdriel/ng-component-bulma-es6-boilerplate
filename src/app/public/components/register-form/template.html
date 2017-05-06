@@ -1,0 +1,53 @@
+<div class="hero-body">
+  <div class="container">
+    <div class="columns is-desktop">
+      <div class="column is-half is-offset-one-quarter form">
+        <form name="registerForm" novalidate ng-submit="$ctrl.doRegister(registerForm)">
+          <div class="field">
+            <label class="label">Name</label>
+            <p class="control">
+              <input class="input" type="text" name="name" placeholder="Name"
+              ng-model="$ctrl.user.name" maxlength="100" required>
+            </p>
+            <p class="help is-danger" ng-show="registerForm.$submitted && registerForm.name.$error.required">
+              Name is a required field
+            </p>
+          </div>
+
+          <div class="field">
+            <label class="label">Email</label>
+            <p class="control">
+              <input class="input" type="email" name="email" placeholder="Email"
+              ng-model="$ctrl.user.email" maxlength="100" required>
+            </p>
+            <p class="help is-danger" ng-show="registerForm.$submitted && registerForm.email.$error.required">
+              Email is a required field
+            </p>
+            <p class="help is-danger" ng-show="registerForm.$submitted && registerForm.email.$error.email">
+              Enter a valid email
+            </p>
+          </div>
+
+          <div class="field">
+            <label class="label">Password</label>
+            <p class="control">
+              <input class="input" type="password" name="password" placeholder="Password"
+              ng-model="$ctrl.user.password" maxlength="30" required>
+            </p>
+            <p class="help is-danger" ng-show="registerForm.$submitted && registerForm.password.$error.required">
+              Password is a required field
+            </p>
+          </div>
+
+          <div class="has-text-right">
+            <button class="button is-success" type="submit">Register</button>
+          </div>
+        </form>
+        <hr>
+        <div class="has-text-centered">
+          <a class="button is-outlined is-info" href="#" ui-sref="home">Sign in!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
